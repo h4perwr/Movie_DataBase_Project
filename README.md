@@ -38,3 +38,36 @@ The agent is trained to address the following high-value analytical questions fo
 * **AI/LLM:** Gemini 2.5 Flash
 * **Framework:** LangChain (1.x)
 * **Language:** Python 3.10+
+
+---
+
+
+## 5. Installation and Execution
+
+To run the AI Agent successfully, follow these steps to set up the environment and database.
+
+### 5.1. Database Setup (MySQL Workbench)
+
+1.  **Initialization:** Execute the SQL script `schema_creation.sql` to create the normalized tables (`movies`, `directors`, `genres`, etc.).
+2.  **Populate Data:** Run `data_populate.sql` or use your preferred method to load the **minimum 2000 items** into the database.
+3.  **Optimization:** Run `indexing_setup.sql` to apply indexes and `views_creation.sql` to create the analytical VIEWs.
+4.  **User Configuration:** Ensure you have a non-root user (e.g., `ai_agent`) configured with appropriate permissions for the `movies_dataset`.
+
+### 5.2. Python Environment Configuration
+
+1.  **Install Dependencies:** Install all necessary Python libraries:
+    ```bash
+    pip install -r req.txt
+    ```
+2.  **Configure API Key:** Set your Gemini API key as an environment variable (crucial for agent functionality):
+    ```bash
+    GEMINI_API_KEY='YOUR_SECRET_GEMINI_KEY'
+    ```
+3.  **Connection File:** Verify your `db_connect.py` file contains the correct database URI for the `ai_agent` user.
+
+### 5.3. Running the AI Agent
+
+Execute the main Python script. The agent will initialize, and you will be prompted to enter your analytical question.
+
+```bash
+python agent.py

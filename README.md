@@ -54,12 +54,12 @@ It would be better to have your own dataset. You could find it on whether on Kag
    python -m venv venv
    ```
    
-   # *In Windows:*
+   ## In Windows:
    ```bash
    ./venv/Scripts/activate
    ```
 
-   # In Linux:
+   ## In Linux:
    ```bash
    source ./venv/bin/activate
    ```

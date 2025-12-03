@@ -45,10 +45,10 @@ The agent is trained to address the following high-value analytical questions fo
 
 To run the AI Agent successfully, follow these steps to set up the environment and database.
 
-### 5.1. Database Setup (MySQL Workbench)
+## 5.1. Database Setup (MySQL Workbench)
 It would be better to have your own dataset. You could find it on whether on Kaggle or make it yourself.
 
-### 5.2. Python Environment Configuration
+## 5.2. Python Environment Configuration
 1. **Setup virtual environment and activativation**
    ```bash
    python -m venv venv
@@ -74,7 +74,7 @@ It would be better to have your own dataset. You could find it on whether on Kag
     ```
 3.  **Connection File:** Verify your `db_connect.py` file contains the correct database URI for the `ai_agent` user.
 
-### 5.3. Running the AI Agent
+## 5.3. Running the AI Agent
 
 Execute the main Python script. The agent will initialize, and you will be prompted to enter your analytical question.
 

@@ -16,7 +16,7 @@ The core achievement lies in the successful integration of advanced **Database E
 | **Data Architecture** | Built a **fully normalized relational database** (3NF). | Successfully migrated and structured a large raw dataset containing **200,000+ rows**. |
 | **Performance** | Implemented **Database Optimization** techniques. | Achieved efficient query performance through **Indexing** on critical foreign keys and creating **Analytical VIEWs**. |
 | **AI Integration** | Developed a specialized **Text-to-SQL Agent**. | Utilized **LangChain** with **Gemini-2.5-Flash** to autonomously analyze data and generate insights. |
-| **Security & Auditing** | Implemented critical security **Guardrails**. | Agent execution is strictly limited to **SELECT** operations; dangerous DML/DDL commands (`INSERT`, `UPDATE`, `DROP`) are **programmatically blocked** via the system prompt. |
+| **Security & Auditing** | Implemented critical security **Guardrails**. | Agent execution is strictly limited to its defined role **programmed manualy** |
 | **Analytics** | Prepared the foundation for complex **SQL Analytics and AI Modeling**. | Created **optimized analytical VIEWs** and feature sets necessary for revenue optimization and rating prediction models. |
 
 ---
@@ -41,25 +41,34 @@ The agent is trained to address the following high-value analytical questions fo
 
 ---
 
-
 ## 5. Installation and Execution
 
 To run the AI Agent successfully, follow these steps to set up the environment and database.
 
 ### 5.1. Database Setup (MySQL Workbench)
-
-1.  **Initialization:** Execute the SQL script `schema_creation.sql` to create the normalized tables (`movies`, `directors`, `genres`, etc.).
-2.  **Populate Data:** Run `data_populate.sql` or use your preferred method to load the **minimum 2000 items** into the database.
-3.  **Optimization:** Run `indexing_setup.sql` to apply indexes and `views_creation.sql` to create the analytical VIEWs.
-4.  **User Configuration:** Ensure you have a non-root user (e.g., `ai_agent`) configured with appropriate permissions for the `movies_dataset`.
+It would be better to have your own dataset. You could find it on whether on Kaggle or make it yourself.
 
 ### 5.2. Python Environment Configuration
+1. **Setup virtual environment and activativation**
+   ```bash
+   python -m venv venv
+   ```
+   
+   # *In Windows:*
+   ```bash
+   ./venv/Scripts/activate
+   ```
 
-1.  **Install Dependencies:** Install all necessary Python libraries:
+   # In Linux:
+   ```bash
+   source ./venv/bin/activate
+   ```
+   
+2.  **Install Dependencies:** Install all necessary Python libraries:
     ```bash
     pip install -r req.txt
     ```
-2.  **Configure API Key:** Set your Gemini API key as an environment variable (crucial for agent functionality):
+3.  **Configure API Key:** Set your Gemini API key as an environment variable (crucial for agent functionality):
     ```bash
     GEMINI_API_KEY='YOUR_SECRET_GEMINI_KEY'
     ```
